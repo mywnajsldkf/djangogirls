@@ -11,13 +11,13 @@ class Post(models.Model):
     # TextField - 글자 수에 제한이 없는 긴 텍스트를 위한 속성
     text = models.TextField()
     # DateTimeField - 날짜와 시간을 의미
-    created_data = models.DateTimeField(
+    created_date = models.DateTimeField(
         default=timezone.now)
-    published_data = models.DateTimeField(
+    published_date = models.DateTimeField(
         blank=True, null=True)
 
     def publish(self):
-        self.published_data = timezone.now()
+        self.published_date = timezone.now()
         self.save()
     
     def __str__(self):
